@@ -19,9 +19,13 @@ def extract_article_content(article_url: str) -> str:
         timeout=60,
     )
 
-    article_soup = BeautifulSoup(article_res.text, "html.parser")
+    article_soup = BeautifulSoup(
+        article_res.text, "html.parser",
+    )
 
-    main_contain_tag = article_soup.select_one('div[id="main-content"]')
+    main_contain_tag = article_soup.select_one(
+        'div[id="main-content"]',
+    )
 
     # main_contain_tag.select('span')[0].extract()
     for span_tag in main_contain_tag.select('span'):
