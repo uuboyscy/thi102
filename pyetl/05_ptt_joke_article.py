@@ -15,8 +15,10 @@ headers = {
 }
 
 for _ in range(5):
+    # Extract HTML string
     res = requests.get(url, headers=headers, timeout=60)
 
+    # Transform HTML
     soup = BeautifulSoup(res.text, "html.parser")
 
     title_tag_list = soup.select('div[class="title"] a')
@@ -25,9 +27,10 @@ for _ in range(5):
         title = title_tag.text
         article_url = "https://www.ptt.cc" + title_tag["href"]
 
+        # E:
         article_content = extract_article_content(article_url)
 
-        ############# Load file ##############
+        ############# Load article_content to a file ##############
         file_name = title
         try:
             with open(f"./joke/{file_name}.txt", "w", encoding="utf-8") as f:
