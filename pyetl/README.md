@@ -1,0 +1,16 @@
+- Step 1. import packages:
+    - requests
+    - BeautifulSoup
+    - json
+- Step 2. Prepare data:
+    - url
+    - headers
+    - form_data
+    - cookies
+    - json
+- Step 3. Request server and get Response
+  - HTML string
+  - JSON string
+- Step 4. Transform response data
+  - if HTML string -> BeautifulSoup() -> locate tags via find() or select()
+  - if JSON string -> json.loads() -> Python Dist or List
