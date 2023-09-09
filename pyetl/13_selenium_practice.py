@@ -21,6 +21,8 @@ driver = Chrome(service=service)
 url = 'https://www.ptt.cc/bbs/index.html'
 
 driver.get(url)
+# /html/body/div[2]/div[2]/div[2]/div[2]/a
+# //*[@id="main-container"]/div[2]/div[2]/div[2]/a
 # driver.find_element_by_class_name('board-name').click() # Deprecated
 driver.find_element(by=By.CLASS_NAME, value='board-name').click()
 # driver.find_element_by_class_name('btn-big').click() # Deprecated
