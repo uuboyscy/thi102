@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>hello_post template</title>
+    </head>
+    <body>
+        What is your name?<br>
+        <form method="POST">
+            <input name="username">
+            <button>SUBMIT</button>
+        </form>
+        {% if request_method == "POST" %}
+        <h1>Hello {{ username }}</h1>
+        {% endif %}
+    </body>
+</html>
